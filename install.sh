@@ -35,11 +35,11 @@ sudo apt-get install -y \
 REQUIRED_MB=10240
 AVAILABLE_MB=$(df -Pm "$BASE_DIR" | awk 'NR==2 {print $4}')
 if [ "$AVAILABLE_MB" -lt "$REQUIRED_MB" ]; then
-    echo "❌ Not enough disk space in $BASE_DIR"
+    echo " Not enough disk space in $BASE_DIR"
     echo "Required: ${REQUIRED_MB} MB, Available: ${AVAILABLE_MB} MB"
     exit 1
 else
-    echo "✅ Disk space check passed: ${AVAILABLE_MB} MB available"
+    echo " Disk space check passed: ${AVAILABLE_MB} MB available"
 fi
 
 #############################################
@@ -248,9 +248,10 @@ sudo systemctl reload postgresql
 sudo ufw allow from 10.37.10.0/24 to any port $POSTGRES_PORT proto tcp
 sudo ufw allow from 10.37.11.0/24 to any port $POSTGRES_PORT proto tcp
 
-echo "✅ PostgreSQL setup complete!"
+echo "  PostgreSQL setup complete!"
 echo "User: $POSTGRES_USER"
 echo "Database: $POSTGRES_DB"
 echo "Password: $POSTGRES_PASSWORD"
 
-echo "🎉 Authentik installation complete!"
+echo " Authentik installation complete!"
+
