@@ -108,7 +108,7 @@ Authentik uses argon2id hashes. You must generate one using the Authentik CLI:
 
 Exit PostgreSQL:
 
-\1
+\q
 
 
 Frontend Build:
